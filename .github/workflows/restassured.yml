@@ -35,12 +35,15 @@ jobs:
       - name: Generate Allure Report
         run: mvn allure:report
 
-      # 5️⃣ Deploy Allure Report to GitHub Pages (timestamped)
+      # 5️⃣ Deploy Allure Report to GitHub Pages (timestamped + latest)
       - name: Deploy Allure Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./target/site/allure-maven-plugin
           publish_branch: gh-pages
-          destination_dir: ${{ github.run_number }}-${{ github.run_id }}   # Unique folder per run
+          # Deploy to both timestamped folder and "latest"
+          destination_dir: |
+            ${{ github.run_number }}-${{ github.run_id }}
+            latest
           commit_message: "Update Allure report [run #${{ github.run_number }}] [skip ci]"

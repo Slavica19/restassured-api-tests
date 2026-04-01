@@ -1,12 +1,12 @@
 {
-  "uid" : "e5cb7e3e2c228a29",
+  "uid" : "1668f239bcc9887d",
   "name" : "Get pet by ID and verify details",
   "fullName" : "tests.PetTests.getPetById_shouldReturnPet",
   "historyId" : "a9a3a53e9597ab5c35e396ebb832cc3c",
   "time" : {
-    "start" : 1775046570077,
-    "stop" : 1775046570331,
-    "duration" : 254
+    "start" : 1775047196284,
+    "stop" : 1775047196924,
+    "duration" : 640
   },
   "status" : "passed",
   "flaky" : false,
@@ -33,10 +33,10 @@
     "value" : "tests.PetTests"
   }, {
     "name" : "host",
-    "value" : "158277032bc2"
+    "value" : "c0a12db6653e"
   }, {
     "name" : "thread",
-    "value" : "226@158277032bc2.main(1)"
+    "value" : "227@c0a12db6653e.main(1)"
   }, {
     "name" : "framework",
     "value" : "testng"
@@ -66,6 +66,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "e5cb7e3e2c228a29.json",
+  "source" : "1668f239bcc9887d.json",
   "parameterValues" : [ ]
 }

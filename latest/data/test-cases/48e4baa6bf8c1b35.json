@@ -1,12 +1,12 @@
 {
-  "uid" : "a83f17b1364218fc",
+  "uid" : "48e4baa6bf8c1b35",
   "name" : "Create a pet and verify status code 200",
   "fullName" : "tests.PetTests.createPet_shouldReturn200",
   "historyId" : "d9eacedbc2e5acbaff81689deca4640e",
   "time" : {
-    "start" : 1775046568113,
-    "stop" : 1775046570036,
-    "duration" : 1923
+    "start" : 1775047194095,
+    "stop" : 1775047196246,
+    "duration" : 2151
   },
   "status" : "passed",
   "flaky" : false,
@@ -33,10 +33,10 @@
     "value" : "tests.PetTests"
   }, {
     "name" : "host",
-    "value" : "158277032bc2"
+    "value" : "c0a12db6653e"
   }, {
     "name" : "thread",
-    "value" : "226@158277032bc2.main(1)"
+    "value" : "227@c0a12db6653e.main(1)"
   }, {
     "name" : "framework",
     "value" : "testng"
@@ -66,6 +66,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "a83f17b1364218fc.json",
+  "source" : "48e4baa6bf8c1b35.json",
   "parameterValues" : [ ]
 }

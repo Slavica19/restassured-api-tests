@@ -2,7 +2,7 @@ name: Run RestAssured Tests and Publish Allure
 
 on:
   push:
-    branches: [main]
+    branches: [master]
 
 jobs:
   test-and-publish:

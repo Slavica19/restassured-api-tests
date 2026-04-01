@@ -1,0 +1,71 @@
+{
+  "uid" : "e5cb7e3e2c228a29",
+  "name" : "Get pet by ID and verify details",
+  "fullName" : "tests.PetTests.getPetById_shouldReturnPet",
+  "historyId" : "a9a3a53e9597ab5c35e396ebb832cc3c",
+  "time" : {
+    "start" : 1775046570077,
+    "stop" : 1775046570331,
+    "duration" : 254
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "tests.PetTests"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.PetTests"
+  }, {
+    "name" : "testMethod",
+    "value" : "getPetById_shouldReturnPet"
+  }, {
+    "name" : "parentSuite",
+    "value" : "PetStore API Suite"
+  }, {
+    "name" : "suite",
+    "value" : "Pet Tests"
+  }, {
+    "name" : "subSuite",
+    "value" : "tests.PetTests"
+  }, {
+    "name" : "host",
+    "value" : "158277032bc2"
+  }, {
+    "name" : "thread",
+    "value" : "226@158277032bc2.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "story",
+    "value" : "Get Pet by ID"
+  }, {
+    "name" : "epic",
+    "value" : "PetStore API"
+  }, {
+    "name" : "feature",
+    "value" : "Pet Management"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "e5cb7e3e2c228a29.json",
+  "parameterValues" : [ ]
+}

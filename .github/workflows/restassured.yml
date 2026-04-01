@@ -31,51 +31,63 @@ jobs:
       - name: Generate Allure Report
         run: mvn allure:report
 
-      # Prepare both timestamped and latest folders locally
+      # ✅ FIXED: include previous reports from gh-pages
       - name: Prepare Allure Report for Deployment
         run: |
           TIMESTAMP=${{ github.run_number }}-${{ github.run_id }}
+
+          # Clone existing gh-pages branch (if exists)
+          git clone --depth 1 --branch gh-pages https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} gh-pages || mkdir gh-pages
+
+          # Create deploy folder and copy existing reports
+          mkdir -p deploy
+          cp -r gh-pages/* deploy/ 2>/dev/null || true
+
+          # Create new report folders
           mkdir -p deploy/$TIMESTAMP deploy/latest
+
+          # Copy new report into timestamped folder
           cp -r target/site/allure-maven-plugin/* deploy/$TIMESTAMP/
+
+          # Replace latest report
+          rm -rf deploy/latest/*
           cp -r target/site/allure-maven-plugin/* deploy/latest/
 
-      # Create dashboard
+      # ✅ FIXED: dashboard now includes ALL reports + sorted newest first
+      - name: Create dashboard index.html
+        run: |
+          echo "<!DOCTYPE html>
+          <html>
+          <head>
+            <title>Allure Reports Dashboard</title>
+            <style>
+              body { font-family: Arial; padding: 20px; }
+              h1 { color: #333; }
+              ul { list-style: none; padding: 0; }
+              li { margin: 8px 0; }
+              a { text-decoration: none; color: #0366d6; }
+              a:hover { text-decoration: underline; }
+              .latest { font-weight: bold; font-size: 18px; }
+            </style>
+          </head>
+          <body>
+            <h1>Allure Reports Dashboard</h1>
+            <p><a class='latest' href='./latest/'>➡ View Latest Report</a></p>
+            <h2>History</h2>
+            <ul>" > deploy/index.html
 
-  - name: Create dashboard index.html
-    run: |
-      echo "<!DOCTYPE html>
-      <html>
-      <head>
-        <title>Allure Reports Dashboard</title>
-        <style>
-          body { font-family: Arial; padding: 20px; }
-          h1 { color: #333; }
-          ul { list-style: none; padding: 0; }
-          li { margin: 8px 0; }
-          a { text-decoration: none; color: #0366d6; }
-          a:hover { text-decoration: underline; }
-          .latest { font-weight: bold; font-size: 18px; }
-        </style>
-      </head>
-      <body>
-        <h1>Allure Reports Dashboard</h1>
-        <p><a class='latest' href='./latest/'>➡ View Latest Report</a></p>
-        <h2>History</h2>
-        <ul>" > deploy/index.html
-      
-      # List folders sorted (newest first)
-      for dir in $(ls -dt deploy/*/); do
-        name=$(basename "$dir")
-        if [ "$name" != "latest" ]; then
-          echo "<li><a href='./$name/'>Report $name</a></li>" >> deploy/index.html
-        fi
-      done
-      
-      echo "</ul>
-      </body>
-      </html>" >> deploy/index.html
+          for dir in $(ls -dt deploy/*/); do
+            name=$(basename "$dir")
+            if [ "$name" != "latest" ]; then
+              echo "<li><a href='./$name/'>Report $name</a></li>" >> deploy/index.html
+            fi
+          done
 
-      # Deploy everything (dashboard + reports)
+          echo "</ul>
+          </body>
+          </html>" >> deploy/index.html
+
+      # Deploy everything (dashboard + all reports)
       - name: Deploy Allure Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:

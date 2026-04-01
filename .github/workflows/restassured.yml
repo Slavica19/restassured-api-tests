@@ -39,6 +39,7 @@ jobs:
           cp -r target/site/allure-maven-plugin/* deploy/$TIMESTAMP/
           cp -r target/site/allure-maven-plugin/* deploy/latest/
 
+      # Create dashboard
 
       - name: Create dashboard index.html
         run: |

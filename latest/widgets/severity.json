@@ -1,20 +1,20 @@
 [ {
-  "uid" : "8a61353510d35dd5",
-  "name" : "Get pet by ID and verify details",
+  "uid" : "8aba2b5a819753ed",
+  "name" : "Create a pet and verify status code 200",
   "time" : {
-    "start" : 1775047422226,
-    "stop" : 1775047423024,
-    "duration" : 798
+    "start" : 1775048021767,
+    "stop" : 1775048023731,
+    "duration" : 1964
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "acecfb49db2af43c",
-  "name" : "Create a pet and verify status code 200",
+  "uid" : "ee5063790fa236ff",
+  "name" : "Get pet by ID and verify details",
   "time" : {
-    "start" : 1775047419871,
-    "stop" : 1775047422181,
-    "duration" : 2310
+    "start" : 1775048023777,
+    "stop" : 1775048023907,
+    "duration" : 130
   },
   "status" : "passed",
   "severity" : "normal"

@@ -11,14 +11,12 @@ on:
 jobs:
   test-and-publish:
     runs-on: ubuntu-latest
-    container: maven:3.9-eclipse-temurin-21  # Run job inside Docker
+    container: maven:3.9-eclipse-temurin-21
 
     steps:
-      # 1️⃣ Checkout repository
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # 2️⃣ Cache Maven dependencies
       - name: Cache Maven packages
         uses: actions/cache@v3
         with:
@@ -27,23 +25,28 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
-      # 3️⃣ Run RestAssured tests
       - name: Run RestAssured Tests
         run: mvn clean test
 
-      # 4️⃣ Generate Allure Report
       - name: Generate Allure Report
         run: mvn allure:report
 
-      # 5️⃣ Deploy Allure Report to GitHub Pages (timestamped + latest)
-      - name: Deploy Allure Report to GitHub Pages
+      # Step 1: Deploy to timestamped folder
+      - name: Deploy Allure Report - Timestamped
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./target/site/allure-maven-plugin/
           publish_branch: gh-pages
-          # Deploy to both timestamped folder and "latest"
-          destination_dir: |
-            ${{ github.run_number }}-${{ github.run_id }}
-            latest
+          destination_dir: ${{ github.run_number }}-${{ github.run_id }}
           commit_message: "Update Allure report [run #${{ github.run_number }}] [skip ci]"
+
+      # Step 2: Deploy to latest folder
+      - name: Deploy Allure Report - Latest
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./target/site/allure-maven-plugin/
+          publish_branch: gh-pages
+          destination_dir: latest
+          commit_message: "Update latest Allure report [run #${{ github.run_number }}] [skip ci]"

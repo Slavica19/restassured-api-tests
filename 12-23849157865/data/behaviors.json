@@ -9,13 +9,13 @@
         "name" : "Create Pet",
         "children" : [ {
           "name" : "Create a pet and verify status code 200",
-          "uid" : "48e4baa6bf8c1b35",
+          "uid" : "acecfb49db2af43c",
           "parentUid" : "a8d1eeb2279c2919a42f30341214d2c2",
           "status" : "passed",
           "time" : {
-            "start" : 1775047194095,
-            "stop" : 1775047196246,
-            "duration" : 2151
+            "start" : 1775047419871,
+            "stop" : 1775047422181,
+            "duration" : 2310
           },
           "flaky" : false,
           "newFailed" : false,
@@ -26,13 +26,13 @@
         "name" : "Get Pet by ID",
         "children" : [ {
           "name" : "Get pet by ID and verify details",
-          "uid" : "1668f239bcc9887d",
+          "uid" : "8a61353510d35dd5",
           "parentUid" : "49c57846e2f94e5a2039bc4d0641d852",
           "status" : "passed",
           "time" : {
-            "start" : 1775047196284,
-            "stop" : 1775047196924,
-            "duration" : 640
+            "start" : 1775047422226,
+            "stop" : 1775047423024,
+            "duration" : 798
           },
           "flaky" : false,
           "newFailed" : false,

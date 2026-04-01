@@ -65,7 +65,7 @@ public class PetTests extends BaseTest {
         petClient.createPet(pet);
 
         var response = petClient.getPetId(petId);
-
+//assertions
         Assert.assertEquals(response.statusCode(), 200);
         Assert.assertEquals(response.jsonPath().getString("name"), "doggie");
         Assert.assertEquals(response.jsonPath().getLong("id"), petId);

@@ -1,0 +1,21 @@
+[ {
+  "uid" : "fb0a02c175a5b410",
+  "name" : "Create a pet and verify status code 200",
+  "time" : {
+    "start" : 1775044176912,
+    "stop" : 1775044178968,
+    "duration" : 2056
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "3ca24a664c05c011",
+  "name" : "Get pet by ID and verify details",
+  "time" : {
+    "start" : 1775044179008,
+    "stop" : 1775044179162,
+    "duration" : 154
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

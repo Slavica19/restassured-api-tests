@@ -1,0 +1,47 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "PetStore API",
+    "children" : [ {
+      "name" : "Pet Management",
+      "children" : [ {
+        "name" : "Create Pet",
+        "children" : [ {
+          "name" : "Create a pet and verify status code 200",
+          "uid" : "fb0a02c175a5b410",
+          "parentUid" : "a8d1eeb2279c2919a42f30341214d2c2",
+          "status" : "passed",
+          "time" : {
+            "start" : 1775044176912,
+            "stop" : 1775044178968,
+            "duration" : 2056
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "a8d1eeb2279c2919a42f30341214d2c2"
+      }, {
+        "name" : "Get Pet by ID",
+        "children" : [ {
+          "name" : "Get pet by ID and verify details",
+          "uid" : "3ca24a664c05c011",
+          "parentUid" : "49c57846e2f94e5a2039bc4d0641d852",
+          "status" : "passed",
+          "time" : {
+            "start" : 1775044179008,
+            "stop" : 1775044179162,
+            "duration" : 154
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "49c57846e2f94e5a2039bc4d0641d852"
+      } ],
+      "uid" : "38a9e9ac67308f9d4da409c605bc4370"
+    } ],
+    "uid" : "4adbcc79bc9f4e8ab4b1edd8d064c1a0"
+  } ]
+}

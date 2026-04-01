@@ -11,7 +11,7 @@ on:
 jobs:
   test-and-publish:
     runs-on: ubuntu-latest
-    container: maven:3.9.2-eclipse-temurin-21  # Run job inside Docker
+    container: maven:3.9-eclipse-temurin-21  # Run job inside Docker
 
     steps:
       # 1️⃣ Checkout repository

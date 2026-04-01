@@ -1,0 +1,39 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "75ebbdd0314b",
+    "children" : [ {
+      "name" : "224@75ebbdd0314b.main(1)",
+      "children" : [ {
+        "name" : "Create a pet and verify status code 200",
+        "uid" : "473b448b06502036",
+        "parentUid" : "59a993427a610bb521c6119712ac0623",
+        "status" : "passed",
+        "time" : {
+          "start" : 1775044796227,
+          "stop" : 1775044798171,
+          "duration" : 1944
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Get pet by ID and verify details",
+        "uid" : "2458595731833455",
+        "parentUid" : "59a993427a610bb521c6119712ac0623",
+        "status" : "passed",
+        "time" : {
+          "start" : 1775044798207,
+          "stop" : 1775044798469,
+          "duration" : 262
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "59a993427a610bb521c6119712ac0623"
+    } ],
+    "uid" : "f314264d2c98dd1d2b7c4a0adb675f60"
+  } ]
+}

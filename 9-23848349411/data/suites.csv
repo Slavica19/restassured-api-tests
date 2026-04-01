@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Apr 01 12:23:23 UTC 2026","Wed Apr 01 12:23:25 UTC 2026","2036","PetStore API Suite","Pet Tests","tests.PetTests","tests.PetTests","createPet_shouldReturn200","Create a pet and verify status code 200",""
+"passed","Wed Apr 01 12:23:25 UTC 2026","Wed Apr 01 12:23:25 UTC 2026","130","PetStore API Suite","Pet Tests","tests.PetTests","tests.PetTests","getPetById_shouldReturnPet","Get pet by ID and verify details",""

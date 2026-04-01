@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-03-31T17:57:00 UTC" name="PetStore API Suite" finished-at="2026-03-31T17:57:06 UTC" duration-ms="6496">
+    <groups>
+    </groups>
+    <test started-at="2026-03-31T17:57:00 UTC" name="Pet Tests" finished-at="2026-03-31T17:57:06 UTC" duration-ms="6496">
+      <class name="tests.PetTests">
+        <test-method signature="createPet_shouldReturn200()[pri:0, instance:tests.PetTests@a530d0a]" started-at="2026-03-31T17:57:00 UTC" name="createPet_shouldReturn200" description="Create a pet and verify status code 200" finished-at="2026-03-31T17:57:05 UTC" duration-ms="5095" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createPet_shouldReturn200 -->
+        <test-method signature="getPetById_shouldReturnPet()[pri:0, instance:tests.PetTests@a530d0a]" started-at="2026-03-31T17:57:05 UTC" name="getPetById_shouldReturnPet" description="Get pet by ID and verify details" finished-at="2026-03-31T17:57:06 UTC" depends-on-methods="tests.PetTests.createPet_shouldReturn200" duration-ms="1184" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getPetById_shouldReturnPet -->
+      </class> <!-- tests.PetTests -->
+    </test> <!-- Pet Tests -->
+  </suite> <!-- PetStore API Suite -->
+</testng-results>

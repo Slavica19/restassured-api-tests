@@ -1,0 +1,6 @@
+config/ConfigManager.class
+model/Pet.class
+client/PetClient.class
+model/Tags.class
+model/Category.class
+utils/SpecBuilder.class

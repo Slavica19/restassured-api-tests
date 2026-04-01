@@ -1,0 +1,14 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+
+/target/
+*.class
+*.log
+
+.idea/
+
+
+allure-results/
+allure-report/
+test-report/

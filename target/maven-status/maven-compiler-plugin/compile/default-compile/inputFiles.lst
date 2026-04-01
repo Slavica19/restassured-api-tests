@@ -1,0 +1,6 @@
+/app/src/main/java/config/ConfigManager.java
+/app/src/main/java/model/Tags.java
+/app/src/main/java/model/Pet.java
+/app/src/main/java/client/PetClient.java
+/app/src/main/java/model/Category.java
+/app/src/main/java/utils/SpecBuilder.java

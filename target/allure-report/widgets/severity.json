@@ -1,0 +1,1 @@
+[{"uid":"1fe2dd2038c97b0","name":"Get pet by ID and verify details","time":{"start":1774979825754,"stop":1774979826932,"duration":1178},"status":"passed","severity":"normal"},{"uid":"a56be5d1f34d1f7b","name":"Create a pet and verify status code 200","time":{"start":1774979820576,"stop":1774979825604,"duration":5028},"status":"passed","severity":"normal"}]

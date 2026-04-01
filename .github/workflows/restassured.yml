@@ -11,20 +11,14 @@ on:
 jobs:
   test-and-publish:
     runs-on: ubuntu-latest
+    container: maven:3.9.2-eclipse-temurin-21  # Run job inside Docker
 
     steps:
-      # Step 1: Checkout repo
+      # 1️⃣ Checkout repository
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Set up JDK
-      - name: Set up JDK 21
-        uses: actions/setup-java@v3
-        with:
-          java-version: '21'
-          distribution: 'temurin'
-
-      # Step 3: Cache Maven dependencies
+      # 2️⃣ Cache Maven dependencies
       - name: Cache Maven packages
         uses: actions/cache@v3
         with:
@@ -33,18 +27,20 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
-      # Step 4: Run tests
+      # 3️⃣ Run RestAssured tests
       - name: Run RestAssured Tests
         run: mvn clean test
 
-      # Step 5: Generate Allure Report
+      # 4️⃣ Generate Allure Report
       - name: Generate Allure Report
         run: mvn allure:report
 
-      # Step 6: Publish report to GitHub Pages
+      # 5️⃣ Deploy Allure Report to GitHub Pages (timestamped)
       - name: Deploy Allure Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./target/site/allure-maven-plugin
           publish_branch: gh-pages
+          destination_dir: ${{ github.run_number }}-${{ github.run_id }}   # Unique folder per run
+          commit_message: "Update Allure report [run #${{ github.run_number }}] [skip ci]"

@@ -31,22 +31,19 @@ jobs:
       - name: Generate Allure Report
         run: mvn allure:report
 
-      # Step 1: Deploy to timestamped folder
-      - name: Deploy Allure Report - Timestamped
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./target/site/allure-maven-plugin/
-          publish_branch: gh-pages
-          destination_dir: ${{ github.run_number }}-${{ github.run_id }}
-          commit_message: "Update Allure report [run #${{ github.run_number }}] [skip ci]"
+      # Prepare both timestamped and latest folders locally
+      - name: Prepare Allure Report for Deployment
+        run: |
+          TIMESTAMP=${{ github.run_number }}-${{ github.run_id }}
+          mkdir -p deploy/$TIMESTAMP deploy/latest
+          cp -r target/site/allure-maven-plugin/* deploy/$TIMESTAMP/
+          cp -r target/site/allure-maven-plugin/* deploy/latest/
 
-      # Step 2: Deploy to latest folder
-      - name: Deploy Allure Report - Latest
+      # Single deployment to gh-pages branch
+      - name: Deploy Allure Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./target/site/allure-maven-plugin/
+          publish_dir: ./deploy
           publish_branch: gh-pages
-          destination_dir: latest
-          commit_message: "Update latest Allure report [run #${{ github.run_number }}] [skip ci]"
+          commit_message: "Update Allure report [run #${{ github.run_number }}] [skip ci]"
